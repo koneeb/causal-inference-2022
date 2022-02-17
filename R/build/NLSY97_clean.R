@@ -3,7 +3,6 @@
 # vignette("colwise")
 # vignette("rowwise")
 
-
 read_csv(here("data/NLSY97_raw.csv")) %>%
   
   # refused responses or incarcerated previously but not in current month --> NA

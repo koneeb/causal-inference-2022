@@ -13,10 +13,10 @@ read_csv(here("data/NLSY97_clean.csv")) %>%
   
   # summarize incarceration length by race and gender
   group_by(race, gender) %>%
-  summarize(length_of_incarceration = mean(length_of_incarceration)) %>%
+  summarize(incar_length = mean(incar_length)) %>%
   
   # pivot the values from race into columns
-  pivot_wider(names_from = race, values_from = length_of_incarceration) %>%
+  pivot_wider(names_from = race, values_from = incar_length) %>%
   
   # rename columns using snakecase
   rename_with(to_title_case) %>%
@@ -30,5 +30,5 @@ read_csv(here("data/NLSY97_clean.csv")) %>%
   ) %>%
   kable_styling(latex_options = c("striped", "HOLD_position")) %>%
   
-  write_lines(here("Desktop/repos/causal-inference-2022/tables/incarceration_length_by_racegender.tex"))
+  write_lines(here("tables/incar_length_by_racegender.tex"))
   
