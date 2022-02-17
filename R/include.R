@@ -24,8 +24,10 @@ librarian::shelf(
   gganimate,
   gapminder,
   stargazer,
-  snakecase
+  snakecase,
+  readr
 )
 
 # tell here where we are so we can use it elsewhere
 here::i_am("R/include.R")
+
